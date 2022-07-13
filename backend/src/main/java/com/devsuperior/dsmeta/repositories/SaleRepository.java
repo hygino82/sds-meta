@@ -1,4 +1,4 @@
-package com.devsuperior.dsmeta.repository;
+package com.devsuperior.dsmeta.repositories;
 
 import com.devsuperior.dsmeta.entities.Sale;
 import org.springframework.data.domain.Page;
