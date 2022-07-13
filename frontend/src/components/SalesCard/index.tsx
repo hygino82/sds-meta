@@ -3,6 +3,7 @@ import NotificationButton from '../NotificationButton';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
+import ptbr from "date-fns/locale/pt-BR"; // the locale you want
 
 function SalesCard() {
 
@@ -18,6 +19,7 @@ function SalesCard() {
             <div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
+                        locale={ptbr}
                         selected={minDate}
                         onChange={(date: Date) => setMinDate(date)}
                         className="dsmeta-form-control"
@@ -26,6 +28,7 @@ function SalesCard() {
                 </div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
+                        locale={ptbr}
                         selected={maxDate}
                         onChange={(date: Date) => setMaxDate(date)}
                         className="dsmeta-form-control"
