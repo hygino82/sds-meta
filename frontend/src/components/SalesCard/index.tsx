@@ -2,8 +2,9 @@ import './styles.css';
 import NotificationButton from '../NotificationButton';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ptbr from "date-fns/locale/pt-BR"; // the locale you want
+import axios from 'axios';
 
 function SalesCard() {
 
@@ -12,6 +13,13 @@ function SalesCard() {
 
     const [minDate, setMinDate] = useState(min);
     const [maxDate, setMaxDate] = useState(max);
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/sales?minDate=2021-11-01&maxDate=2021-12-31")
+            .then(response => {
+                console.log(response.data);
+            });
+    }, []);
 
     return (
         <div className="dsmeta-card">
